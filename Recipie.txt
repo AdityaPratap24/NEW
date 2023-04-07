@@ -1,2 +1,6 @@
 Pizza
 Burger
+
+
+Paneer
+Rice
