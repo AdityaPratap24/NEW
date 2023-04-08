@@ -42,8 +42,21 @@
             alert('Enter the details');
         }
         else{
-            localStorage.setItem('name',name.value);
-            localStorage.setItem('email',email.value);
+            let myObj = {
+                naam : name.value,
+                mail : email.value
+            }
+            // localStorage.clear();
+            let myObj_stringify = JSON.stringify(myObj);
+            localStorage.setItem('myObj',myObj_stringify);
+
+            var li = document.createElement('li');
+            const text = JSON.parse(localStorage.getItem('myObj'));
+            li.appendChild(document.createTextNode(text.naam + " " + text.mail));
+            sub.appendChild(li);
+
+            let item = JSON.parse(localStorage.getItem('myObj'));
+            console.log(item);
         }
     }
 
